@@ -1,20 +1,38 @@
+#include <windows.h>
 #include <iostream>
-
-#include "link_list.h"
-
+#include <conio.h>
+#include "stack.h"
+#include "Quee.h"
 using namespace std ;
-
-
-
 
 int main()
 {
-	link_list <int> b ;
-	b.push(10) ; 
-	b.push(11) ;
-	b.push(12) ;
-	//b.check() ;
-	link_list <string> abeer ;
-	link_list <int> abeer2 ;
-	b.copy(abeer2) ;
+	HANDLE hOut;
+	COORD NewSBSize;
+	SMALL_RECT Area = {0, 0, 0, 0};
+
+	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	NewSBSize = GetLargestConsoleWindowSize(hOut);
+
+	SetConsoleScreenBufferSize(hOut, NewSBSize);
+
+	Area.Right = NewSBSize.X - 1;
+	Area.Bottom = NewSBSize.Y - 1;
+
+	SetConsoleWindowInfo(hOut, TRUE,  &Area);
+
+	cout<<"This is It.";
+	quee<int> abr2 ;
+	stack<int> abr ;
+	abr2.push(10) ;
+	abr2.push(19);
+	abr2.push(15);
+	cout<<"-----------------------"<< endl ;
+	cout <<  abr2.pop()  << endl;
+	cout <<  abr2.pop()  << endl;
+	//cout <<  abr2.pop()  << endl;
+
+
+	return 0;
 }

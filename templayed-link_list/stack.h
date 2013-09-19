@@ -3,14 +3,14 @@
 #include <string>
 using namespace std ;
 template <typename K >
-class link_list
+class stack
 {
 public:
-	link_list(void){head=NULL;tail=NULL;}
-	~link_list(void){}
-	void copy(link_list &){cout<<"working"<<endl ;}
-	link_list(K obj){
-	link_list::node *ptr = new node ;
+	stack(void){head=NULL;tail=NULL;}
+	~stack(void){}
+	
+	stack(K obj){
+	stack::node *ptr = new node ;
 	head = ptr ;
 	tail = ptr ;
 	head->setdata(obj) ;
@@ -32,7 +32,7 @@ private:
 		void setprev(node *obj){prev = obj ;}
 		K getdata(){return data;}
 	};
-	//typedef link_list::node	*point  ;
+	//typedef stack::node	*point  ;
 	node *head ;
 	node *tail ;
 public:
@@ -40,7 +40,7 @@ public:
 
 		if (head == NULL)
 		{
-			link_list::node *ptr = new node ;
+			stack::node *ptr = new node ;
 			head = ptr ;
 			tail = ptr ;
 			head->setdata(obj) ;
@@ -49,7 +49,7 @@ public:
 		}
 		else
 		{
-			link_list::node *ptr = new node ;
+			stack::node *ptr = new node ;
 			node *temp ;
 			temp = head ;
 			head = ptr ;
@@ -60,6 +60,15 @@ public:
 		}
 	}
 	/////////////////////////checker function
+	//void check(){
+	//	node *temp ;
+	//	temp =  head ;
+	//	while (temp == NULL)
+	//	{
+	//		cout << temp->getdata() << endl ;
+	//		temp =  temp->getnext() ;
+	//	}
+	//}
 	void check(){
 		cout << "Head data" << endl ;
 		cout<<head->getdata()<<endl ; 
@@ -96,6 +105,13 @@ public:
 		else{
 		cout<<head->getnext()->getnext()->getdata()<<endl ; 
 		}
+	}
+
+	K pop(){
+		node *temp ;
+		temp = head ;
+		head = head->getnext() ;
+		return temp->getdata() ;
 	}
 };
 

@@ -18,12 +18,12 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="link_list.cpp">
+    <ClCompile Include="Quee.h">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="link_list.h">
+    <ClInclude Include="stack.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
