@@ -22,15 +22,15 @@ int main()
 
 	SetConsoleWindowInfo(hOut, TRUE,  &Area);
 
-	cout<<"This is It.";
+	//cout<<"This is It.";
 	quee<int> abr2 ;
 	stack<int> abr ;
-	abr2.push(10) ;
-	abr2.push(19);
-	abr2.push(15);
+	abr2.enquee_s(10) ;
+	abr2.enquee_s(19);
+	//abr2.push(15);
 	cout<<"-----------------------"<< endl ;
-	cout <<  abr2.pop()  << endl;
-	cout <<  abr2.pop()  << endl;
+	cout <<  abr2.dequee_S()  << endl;
+	cout <<  abr2.dequee_S()  << endl;
 	//cout <<  abr2.pop()  << endl;
 
 
